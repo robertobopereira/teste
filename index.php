@@ -3,7 +3,7 @@
 $LOGIN=$_ENV["MYSQL_USER"];
 $SENHA=$_ENV["MYSQL_PASSWORD"];
 $DATABASE=$_ENV["MYSQL_DATABASE"];
-$IP="BD";
+$IP="bd";
 
 $conexao=mysqli_connect($IP,$LOGIN,$SENHA,$DATABASE) or die("Falhou");
 
