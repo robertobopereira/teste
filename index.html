@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina de teste</title>
-</head>
-<body>
-    <h1>Página de teste</h1>
-    <hr>
-    <h2> Funcionou! mesmo</h2>
-</body>
-</html>
+<?php
+
+$LOGIN=$_ENV["MYSQL_USER"];
+$SENHA=$_ENV["MYSQL_PASSWORD"];
+$DATABASE=$_ENV["MYSQL_DATABASE"];
+$IP="BD";
+
+$conexao=mysqli_connect($IP,$LOGIN,$SENHA,$DATABASE) or die("Falhou");
+
+echo "Funfo a conexão";
+
+$sql="create table cliente(
+    idcliente int not null auto_increment,
+    nome varchar(120),
+    primary key(idcliente) )";
+
+mysqli_query($conexao,$sql);
+
+?>
